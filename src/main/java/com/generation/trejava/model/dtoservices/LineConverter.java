@@ -2,11 +2,14 @@ package com.generation.trejava.model.dtoservices;
 
 import java.time.LocalDateTime;
 
+import org.springframework.stereotype.Service;
+
 import com.generation.trejava.model.dto.Line.LineDtoR;
 import com.generation.trejava.model.dto.Line.LineDtoWplus;
 import com.generation.trejava.model.entities.Line;
 import com.generation.trejava.model.entities.Train;
 
+@Service
 public class LineConverter {
 
     public LineDtoR LineToDtoR (Line l)
@@ -35,7 +38,7 @@ public class LineConverter {
                .build(); 
     }
 
-    public double calcDurMin (Line l)
+    protected double calcDurMin (Line l)
     {
         double res=0;
         Train t = l.getLocomotive();
@@ -43,7 +46,7 @@ public class LineConverter {
         return res*60; 
     }
 
-    public LocalDateTime calcArrTime (Line l)
+    private LocalDateTime calcArrTime (Line l)
     {
         return l.getDeparture_time().plusMinutes((long)calcDurMin(l));
     }

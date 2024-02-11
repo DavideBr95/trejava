@@ -10,9 +10,10 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @SuperBuilder
 public class TrainDtoBase {
-    
+
     private Integer id;
     private String serial_number, type;
     private Double average_speed;
     private int capacity;
+
 }

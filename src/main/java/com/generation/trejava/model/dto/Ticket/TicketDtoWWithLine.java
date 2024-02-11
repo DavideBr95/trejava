@@ -1,4 +1,5 @@
-package com.generation.trejava.model.dto.Line;
+package com.generation.trejava.model.dto.Ticket;
+
 import java.time.LocalDateTime;
 
 import lombok.AllArgsConstructor;
@@ -10,10 +11,13 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-public class LineDtoBase 
+public class TicketDtoWWithLine extends TicketDtoBase
 {
-    private Integer id;
+    //ticket
+    private double base_price;
+    
+    //linea
+    private Integer line_id;
     private String departure_station,destination_station;
-    private Double lenght;
     private LocalDateTime departure_time;
 }
