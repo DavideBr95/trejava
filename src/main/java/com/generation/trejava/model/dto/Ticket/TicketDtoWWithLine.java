@@ -11,11 +11,9 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-public class TicketDtoWWithLine extends TicketDtoBase
+public class TicketDtoWWithLine extends TicketDtoWplus
 {
-    //ticket
-    private double base_price;
-    
+       
     //linea
     private Integer line_id;
     private String departure_station,destination_station;

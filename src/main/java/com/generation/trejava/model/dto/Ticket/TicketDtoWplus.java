@@ -12,6 +12,7 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @SuperBuilder
 public class TicketDtoWplus extends TicketDtoBase {
+    private Integer id;
     private String passAnagr;
     private double effectivePrice;
 }

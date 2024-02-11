@@ -11,7 +11,7 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 public class TicketDtoBase 
 {
-    private Integer id;
     private String level;
     private double base_price;
+    private Integer passenger_id,line_id;
 }

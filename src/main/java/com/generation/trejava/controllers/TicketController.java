@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.generation.trejava.model.dto.Ticket.TicketDtoR;
 import com.generation.trejava.model.dtoservices.TicketConverter;
-import com.generation.trejava.model.entities.Line;
 import com.generation.trejava.model.repositories.TicketRepository;
 
 @RestController
@@ -21,7 +20,7 @@ public class TicketController {
     TicketConverter conv;
 
     @PostMapping("/tickets")
-    public void getTickets(@RequestBody TicketDtoR dto) {
+    public void insertTicket(@RequestBody TicketDtoR dto) {
         tRepo.save(conv.dtoRtoTicket(dto));
     }
 

@@ -43,7 +43,9 @@ public class LineConverter {
         double res=0;
         Train t = l.getLocomotive();
         res=l.getLenght()/t.getAverage_speed();
-        return res*60; 
+        if(res>=60)
+            return res;
+        return res*60;
     }
 
     private LocalDateTime calcArrTime (Line l)
