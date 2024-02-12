@@ -36,7 +36,7 @@ public class TicketConverter
                 .level(e.getLevel())
                 .base_price(e.getBase_price())
                 .passAnagr(e.getOwner().getName()+" "+e.getOwner().getSurname())
-                .effectivePrice(CaclEffectivePrice(e))
+                .effectivePrice(CalcEffectivePrice(e))
                 .build();
     }
 
@@ -46,7 +46,7 @@ public class TicketConverter
                 .builder()
                 .id(e.getId())
                 .level(e.getLevel())
-                .effectivePrice(CaclEffectivePrice(e))
+                .effectivePrice(CalcEffectivePrice(e))
                 .line_id(e.getTrip().getId())
                 .departure_station(e.getTrip().getDeparture_station())
                 .destination_station(e.getTrip().getDestination_station())
@@ -54,16 +54,16 @@ public class TicketConverter
                 .build();
     }
 
-    private double CaclEffectivePrice(Ticket t)
+    private double CalcEffectivePrice(Ticket t)
     {
         double res=t.getBase_price();
 
         if(t.getOwner().getAge()<14)
-            res=(res/100)*20;
+            res=res*0.8;
 
         if(t.getOwner().getAge()>65)
-            res=(res/100)*40;
-        
+            res=res*0.6;
+
         return res;
     }
 
